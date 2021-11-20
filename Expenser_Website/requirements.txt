@@ -1,1 +1,1 @@
-Django==3.2.9git
+Django==3.2.9

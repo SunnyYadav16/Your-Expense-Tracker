@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import Category, Expense
 from django.contrib import messages
+import json
 
 def index(request):
     categories = Category.objects.all()
-    return render(request, 'TotalExpense/index.html')
+    expense = Expense.objects.filter(user=request.user)
+
+    context = {
+        'expenses': expense
+    }
+    return render(request, 'TotalExpense/index.html', context)
 
 def add_expense(request):
     categories = Category.objects.all()
@@ -28,3 +34,8 @@ def add_expense(request):
         Expense.objects.create(user=request.user, amount=amount, date=date, category=category, description=description)
 
     return redirect('expenses')
+
+
+def search(request):
+    if request.method == "POST":
+        search_str = json.loads(request.body).get('searchText')

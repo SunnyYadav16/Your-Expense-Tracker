@@ -13,8 +13,10 @@ Command - pip install -r requirements.txt (Windows)
 
 
 # Implemented Features: -
-  1. User Registration and Login
+  1. User Registration and Login (User need to register and then manually login into the page using the Already a member option)
   2. Implemented the feature that enables user to add new expenses
   3. Users can create a new category for the expense (Not Implemented)
   4. Implemented a quick search that can filter the data on the basis of amount, category, description.
   5. Implemented the overall expenditure of a user in the form of a table.
+
+

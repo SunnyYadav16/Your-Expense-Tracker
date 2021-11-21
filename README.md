@@ -8,13 +8,13 @@ This project includes following technologies:-
 ## Frontend - HTML, CSS, Bootstrap, JavaScript
 
 
-A file has been added into the main folder (requirements.txt) that needs to be installed into your system in order to run the project 
-### Command - pip install -r requirements.txt (Windows)
+### A file has been added into the main folder (requirements.txt) that needs to be installed into your system in order to run the project 
+Command - pip install -r requirements.txt (Windows)
 
 
-Implemented Features:-
-  # 1. User Registration and Login
-  # 2. Implemented the feature that enables user to add new expenses
-  # 3. Users can create a new category for the expense (Not Implemented)
-  # 4. Implemented a quick search that can filter the data on the basis of amount, category, description.
-  # 5. Implemented the overall expenditure of a user in the form of a table.
+# Implemented Features:-
+  1. User Registration and Login
+  2. Implemented the feature that enables user to add new expenses
+  3. Users can create a new category for the expense (Not Implemented)
+  4. Implemented a quick search that can filter the data on the basis of amount, category, description.
+  5. Implemented the overall expenditure of a user in the form of a table.

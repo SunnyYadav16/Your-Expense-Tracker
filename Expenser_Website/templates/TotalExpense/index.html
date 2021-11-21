@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block  content %}
 
@@ -23,7 +24,17 @@
 
         {% if expenses.count %}
 
-        <table class="table table-hover">
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" id="searchinput">
+                </div>
+            </div>
+        </div>
+
+        <div class="app-table">
+            <table class="table table-hover mt-3">
             <thead>
                 <tr>
                     <th>Amount (Currency) </th>
@@ -44,7 +55,31 @@
             {% endfor %}
             </tbody>
         </table>
+        </div>
+
+        <div class="table table-output table-hover">
+            <table class="table table-hover mt-3">
+            <thead>
+                <tr>
+                    <th>Amount (Currency) </th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="pagination-container">
+
         {% endif %}
+        </div>
     </div>
 </div>
+
+<script src="{% static 'js/searchExpenses.js' %}"></script>
+
 {% endblock content %}

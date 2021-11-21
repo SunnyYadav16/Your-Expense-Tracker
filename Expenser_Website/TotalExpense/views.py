@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Category, Expense
 from django.contrib import messages
 import json
+from django.http import JsonResponse
 
 def index(request):
     categories = Category.objects.all()
@@ -39,3 +40,11 @@ def add_expense(request):
 def search(request):
     if request.method == "POST":
         search_str = json.loads(request.body).get('searchText')
+
+        expenses = Expense.objects.filter(amount__istartswith= search_str, user=request.user) | Expense.objects.filter(
+        date__istartswith=search_str, user=request.user) | Expense.objects.filter(category__icontains= search_str,
+        user=request.user) | Expense.objects.filter(description__icontains= search_str, user=request.user)
+
+        data = expenses.values()
+
+        return JsonResponse(lis(data), safe=False)

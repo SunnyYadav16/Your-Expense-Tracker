@@ -47,4 +47,4 @@ def search(request):
 
         data = expenses.values()
 
-        return JsonResponse(lis(data), safe=False)
+        return JsonResponse(list(data), safe=False)

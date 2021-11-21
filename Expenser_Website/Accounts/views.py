@@ -25,14 +25,12 @@ class AccountRegistration(View):
 
         if not User.objects.filter(username=username).exists():
             if not User.objects.filter(email=email).exists():
-                if len(password) < 6:
-                    messages.error(request, "Password too short")
+                if len(password) < 4:
                     return render(request, 'Accounts/Register.html', context)
 
                 user = User.objects.create_user(username=username, email=email)
                 user.set_password(password)
                 user.save()
-                messages.success(request, "Account Created Successfully")
                 return render(request, 'Accounts/Register.html')
 
         return render(request, 'Accounts/Register.html')

@@ -12,7 +12,7 @@ This project includes following technologies:-
 Command - pip install -r requirements.txt (Windows)
 
 
-# Implemented Features:-
+# Implemented Features: -
   1. User Registration and Login
   2. Implemented the feature that enables user to add new expenses
   3. Users can create a new category for the expense (Not Implemented)
